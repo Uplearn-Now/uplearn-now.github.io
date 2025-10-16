@@ -1,0 +1,45 @@
+<svg width="1200" height="1200" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- 
+    SVG Logo for Uplearn v0.2
+    Created: Murali Krishnan, Oct 15, 2025
+  -->
+
+  <!-- define colors and variables -->
+  <defs>
+    <linearGradient id="paleBlueColor">
+      <stop offset="100%" stop-color="rgb(173,216,230)" />
+    </linearGradient>
+
+    <linearGradient id="shinyBlueColor">
+      <stop offset="100%" stop-color="rgb(0,0,255)" />
+    </linearGradient>
+    
+    <linearGradient id="yellowColor">
+      <stop offset="100%" stop-color="rgb(255,255,0)" />
+    </linearGradient>
+
+    <linearGradient id="whiteColor">
+      <stop offset="100%" stop-color="rgb(255,255,255)" />
+    </linearGradient>
+
+    <radialGradient id="radialFill" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" style="stop-color:rgb(0,0,255);stop-opacity:1" />
+      <stop offset="50%" style="stop-color:rgb(0,0,200);stop-opacity:1" />       
+      <stop offset="100%" style="stop-color:rgb(0,0,160);stop-opacity:1" /> 
+    </radialGradient>
+  </defs>
+
+  <!-- render the core gemoetry parts -->
+  <polygon points="550,110 950,500 1150,0" fill="url(#radialFill)" transform="translate(0,0)" />
+  <polygon points="550,200 1090,550 1150,0" fill="url(#radialFill)" transform="translate(0,0)" />
+
+  <circle cx="600" cy="600" r="480" fill="url(#whiteColor)" />
+  <circle cx="600" cy="600" r="420" fill="url(#radialFill)" />
+
+  <!-- render the Name -->
+  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" 
+    font-family="Arial" font-size="600" font-style="italic"
+    transform="translate(0, 50)"
+    fill="url(#whiteColor)">Up</text>
+</svg>
