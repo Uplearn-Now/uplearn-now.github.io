@@ -7,24 +7,14 @@
     // Get the original path that failed (e.g., /test)
     var path = window.location.pathname;
 
-    // IMPORTANT: Ensure the path is correctly handled for the base URL (which is '/')
-    // 1. Save the intended path to session storage
-    sessionStorage.redirect = location.href;
-    
-    // 2. Redirect to the ROOT PATH (The browser will automatically load index.html)
-    // Use window.location.origin to ensure protocol/host are correct
-    window.location.replace(window.location.origin + "/"); 
-
     console.log( `in 404.html ... input path is: ${path}. replacing origin to /" "`);
 
-    // The simplest, most effective redirect for SPAs on GitHub Pages:
-    (function(){
-      // Set the full failing URL to session storage
-      sessionStorage.setItem('redirect', location.href); 
-      
-      // Redirect to the base index file, forcing the router to load
-      location.replace(location.origin + '/index.html'); 
-    })();    
+    // 1. Preserve the path in history (it remains /absd)
+    // 2. Force the browser to load the index file for this URL
+
+    // This simple redirect is often enough:
+    location.replace(location.origin + '/');
+    
   </script>
 </head>
 <body>
