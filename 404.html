@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  <script type="text/javascript">
+    // Get the original path that failed (e.g., /test)
+    var path = window.location.pathname;
+
+    // Get the base URL (e.g., https://username.github.io/repo-name/)
+    // This is crucial for GitHub Pages, as the site is often hosted in a subfolder (/repo-name/)
+    var base = window.location.origin;
+
+    // Create the full path to the correct index file, preserving the path after the hash
+    // We use history.replaceState to change the URL without causing another page reload.
+    
+    // NOTE: This simple version assumes your repository name is NOT part of the URL path
+    // If your URL is https://<username>.github.io/<repo-name>/test
+    // You need to handle the <repo-name> subpath.
+
+    console.log( `in 404.html: inomcing path is: ${path}. base is: ${base}`);
+    
+    // Simple redirect (may fail if repo name is in the path):
+    window.location.replace(base + "/index.html" + window.location.search + window.location.hash);
+    
+    // Better method using replaceState and hash trick (Recommended for React Router):
+    (function(){
+      // 1. Save the intended path to the session storage (or a cookie)
+      sessionStorage.redirect = location.href;
+      
+      // 2. Redirect to the base index page
+      location.pathname = "/index.html"; 
+    })();
+  </script>
+</head>
+<body>
+  <p>If you are not redirected automatically, follow <a href="/">this link</a>.</p>
+</body>
+</html>
